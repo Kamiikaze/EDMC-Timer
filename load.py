@@ -1,12 +1,13 @@
-import time
 import logging
-import tkinter as tk
 import myNotebook as nb
 import sys
+import time
+import tkinter as tk
 
 from config import appname, config
-from typing import Optional
 from l10n import Locale
+from ttkHyperlinkLabel import HyperlinkLabel
+from typing import Optional
 
 # For compatibility with pre-5.0.0
 if not hasattr(config, 'get_int'):
@@ -23,7 +24,7 @@ if not hasattr(config, 'get_list'):
 
 
 PLUGIN_NAME = "EDMC-Timer"
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 
 logger = logging.getLogger(f"{appname}.{PLUGIN_NAME}")
 this = sys.modules[__name__]
@@ -123,8 +124,11 @@ def plugin_prefs(parent: nb.Notebook, cmdr: str, is_beta: bool) -> Optional[tk.F
     Return a TK Frame for adding to the EDMarketConnector settings dialog.
     """
     frame = nb.Frame(parent)
-    nb.Label(frame, text=f'{PLUGIN_NAME} v{VERSION}').grid(row=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
-
+    frame.columnconfigure(2, weight=1)
+    
+    HyperlinkLabel(frame, text=PLUGIN_NAME, background=nb.Label().cget('background'), url='https://github.com/Kamiikaze/EDMC-Timer', underline=True).grid(row=0, columnspan=2, padx=10, sticky=tk.W)
+    nb.Label(frame, text = 'Version %s' % VERSION).grid(row=0, column=2, padx=5, sticky=tk.E)
+    
     # Set the variables to their saved states
     this.show_jumps = tk.IntVar(value=config.getint("show_jumps"))
     this.show_income = tk.IntVar(value=config.getint("show_income"))
