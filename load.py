@@ -22,7 +22,7 @@ if not hasattr(config, 'get_list'):
     config.get_list = config.get
 
 
-PLUGIN_NAME = "zEDMC-Timer"
+PLUGIN_NAME = "EDMC-Timer"
 VERSION = '1.0.0'
 
 logger = logging.getLogger(f"{appname}.{PLUGIN_NAME}")
