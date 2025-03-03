@@ -1,7 +1,7 @@
 # EDMC-Timer
 A plugin for the [Elite Dangerous Market Connector (EDMC)](https://github.com/EDCD/EDMarketConnector) to start a timer to track jumps and profit made during this time.
 
-There are already similiar plugins (see [Acknowledgement](Acknowledgement)), but as they only show "per hour" and dont display the time from the start of the measurement, 
+There are already similiar plugins (see [Acknowledgement](https://github.com/Kamiikaze/EDMC-Timer/blob/master/README.md#acknowledgement)), but as they only show "per hour" and dont display the time from the start of the measurement, 
 I made this plugin. Most logical is copied from those plugins, except the timer, as this is my first plugin and I am pretty new into python lol.
 
 ## ToDo:
