@@ -47,6 +47,8 @@ def start_timer():
         running = True
         
         start_time = time.time()
+        jumps_made = 0
+        income_earned = 0
         this.jumps_val["text"] = 0
         this.income_val["text"] = "0 Cr"
         
